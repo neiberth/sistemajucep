@@ -5,6 +5,7 @@
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('sistema.home') }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('sistema.arquivo') }}">Arquivo</a></li>
           <li class="breadcrumb-item active" aria-current="page">Processo</li>
         </ol>
     </nav>
