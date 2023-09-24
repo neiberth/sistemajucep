@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class ArquivoController extends Controller
 {
-    //arquivo para o Index
+    public function index(){
+        return view('sistema.arquivo.index');
+    }
 }

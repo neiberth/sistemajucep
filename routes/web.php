@@ -7,6 +7,7 @@ use App\Http\Controllers\LeiloeiroController;
 use App\Http\Controllers\ProcessoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\SistemaPermissaoController;
+use App\Http\Controllers\ArquivoController;
 use App\Models\Leiloeiro;
 
 /*
@@ -43,6 +44,7 @@ Route::prefix('sistema')->middleware(['admin'])->group(function(){
 });
 
 Route::prefix('sistema')->middleware(['arquivo'])->group(function(){
+    Route::get('arquivo', [ArquivoController::class, 'index'])->name('sistema.arquivo');
     Route::resource('caixa', CaixaController::class);
     Route::resource('processo', ProcessoController::class);
 });

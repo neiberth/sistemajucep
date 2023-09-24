@@ -12,7 +12,7 @@ class CaixaController extends Controller
      */
     public function index()
     {
-        return view('sistema.caixa.index');
+        return view('sistema.arquivo.caixa.index');
     }
 
     /**
