@@ -33,7 +33,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/home_dashborad.css')}}" rel="stylesheet">
     <link href="{{ asset('/css/style_home_dashbord.css')}}" rel="stylesheet">
-    <link href="{{ asset('/fontawesome5.15.4/css/all.css')}}" rel="stylesheet">
+    {{-- <link href="{{ asset('/fontawesome5.15.4/css/all.css')}}" rel="stylesheet"> --}}
 
     <!-- Scripts -->
      @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -60,5 +60,6 @@
     </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script></body>
+<script src="https://kit.fontawesome.com/5416d2943c.js" crossorigin="anonymous"></script>
 </body>
 </html>
