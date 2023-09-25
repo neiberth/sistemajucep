@@ -20,7 +20,7 @@ class RecursosHumanosController extends Controller
      */
     public function create()
     {
-        //
+        return view('sistema.rh.create');
     }
 
     /**
