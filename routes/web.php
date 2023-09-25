@@ -8,7 +8,7 @@ use App\Http\Controllers\ProcessoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\SistemaPermissaoController;
 use App\Http\Controllers\ArquivoController;
-use App\Models\Leiloeiro;
+use App\Http\Controllers\RecursosHumanosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +51,10 @@ Route::prefix('sistema')->middleware(['arquivo'])->group(function(){
 
 Route::prefix('sistema')->middleware(['leiloeiro'])->group(function(){
     Route::resource('leiloeiro', LeiloeiroController::class);
+});
+
+Route::prefix('sistema')->middleware(['rh'])->group(function(){
+    Route::resource('rh', RecursosHumanosController::class);
 });
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

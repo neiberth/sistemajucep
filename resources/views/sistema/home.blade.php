@@ -75,7 +75,7 @@
             </div>
             <div class="col-auto mb-3">
                 <div class="card shadow">
-                    <a href="#" type="button" class="btn btn-outline-primary p-0 m-0" aria-current="page">
+                    <a href="{{ route('rh.index')}}" type="button" class="btn btn-outline-primary p-0 m-0" aria-current="page">
                         <div class="card-content">
                             <div class="card-body">
                                 <div class="media d-flex justify-content-between">

@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminAccess::class,
         'arquivo' => \App\Http\Middleware\ArquivoAccess::class,
         'leiloeiro' => \App\Http\Middleware\LeiloeiroAccess::class,
+        'rh' => \App\Http\Middleware\RecursosHumenosAccess::class,
     ];
 }
