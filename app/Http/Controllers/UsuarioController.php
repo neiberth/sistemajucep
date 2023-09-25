@@ -54,7 +54,7 @@ class UsuarioController extends Controller
                 'arquivo' => ['boolean'],
                 'rh' => ['boolean'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'password' => ['required', 'string', 'min:6', 'confirmed'],
             ];
             $request->validate($validacaoCampo);
         }
