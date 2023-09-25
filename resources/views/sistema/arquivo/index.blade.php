@@ -13,7 +13,7 @@
             <h1 class="h2">Arquivo</h1>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-5 mb-3">
+        <div class="row row-cols-1 row-cols-md-4 mb-3">
 
             <div class="col-auto mb-3">
                 <div class="card shadow ">
@@ -36,7 +36,7 @@
             </div>
 
             <div class="col-auto mb-3">
-                <div class="card shadow" style="width: 18rem;">
+                <div class="card shadow">
                     <a href="{{ route('processo.index') }}"class="btn btn-outline-primary p-0 m-0" aria-current="page">
                         <div class="card-content">
                             <div class="card-body">
@@ -56,7 +56,7 @@
 
             </div>
             <div class="col-auto mb-3">
-                <div class="card shadow" style="width: 18rem;">
+                <div class="card shadow">
                     <a href="{{ route('caixa.index') }}"class="btn btn-outline-primary p-0 m-0" aria-current="page">
                         <div class="card-content">
                             <div class="card-body">
