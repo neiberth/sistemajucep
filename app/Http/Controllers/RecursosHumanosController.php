@@ -28,27 +28,7 @@ class RecursosHumanosController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->input('_token') != ''){
-            $validacaoCampo =[
-                'matricula' => ['required', 'string', 'max:20'],
-                'nome' => ['required', 'string', 'max:255'],
-                'cpf' => ['required', 'string', 'max:25'],
-                'rg' => ['required', 'string', 'max:25'],
-                'telefone' => ['required', 'string', 'max:20'],
-                'email' => ['string', 'email', 'max:255', 'unique:users'],
-                'endereco' => ['required', 'string', 'max:255'],
-                'complemento'=> ['required', 'string', 'max:255'],
-                'cidade'=> ['required', 'string', 'max:50'],
-                'data_inicio'=> ['required'],
-                'validade'=> ['string', 'max:50'],
-                'data_fim' => [],
-                'funcao'=> ['string', 'max:50'],
-                'setor'=> ['string', 'max:50'],
-                'contrato'=> ['required', 'string', 'max:50'],
-                'path'=> ['string', 'max:300'],
-            ];
-            $request->validate($validacaoCampo);
-        }
+        //dd($request);
         RecursosHumanos::create($request->all());
         return redirect()->route('rh.index');
     }

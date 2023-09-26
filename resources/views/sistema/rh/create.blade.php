@@ -214,23 +214,23 @@
 
                     <div class="my-3">
                         <div class="form-check">
-                            <input id="contrato" name="contrato" type="radio" class="form-check-input "
+                            <input id="contrato" name="contrato" type="radio" class="form-check-input"
                                 value="efetivo" required>
                             <label class="form-check-label text-md-start fw-semibold"
-                                for="efetivo">{{ __('Efetivo') }}</label>
+                                for="contrato">{{ __('Efetivo') }}</label>
 
                         </div>
                         <div class="form-check">
                             <input id="contrato" name="contrato" type="radio" class="form-check-input"
                                 value="comissionado" required>
                             <label class="form-check-label text-md-start fw-semibold"
-                                for="comissionado">{{ __('Comissionado') }}</label>
+                                for="contrato">{{ __('Comissionado') }}</label>
                         </div>
                         <div class="form-check">
                             <input id="contrato" name="contrato" type="radio" class="form-check-input"
-                                value="prestador" checked required>
+                                value="prestador" required>
                             <label class="form-check-label text-md-start fw-semibold"
-                                for="prestador">{{ __('Prestador') }}</label>
+                                for="contrato">{{ __('Prestador') }}</label>
                         </div>
                     </div>
 
