@@ -80,12 +80,6 @@
                   Arquivo
                 </div></li>
                 @endif
-                @if (($usuario->leiloeiro == 1))
-                <li><div class="dropdown-item d-flex align-items-center gap-2 pt-0 fs-5">
-                  <span class="d-inline-block bg-primary rounded-circle p-1"></span>
-                  Leiloeiro
-                </div></li>
-                @endif
                 @if (($usuario->rh == 1))
                 <li><div class="dropdown-item d-flex align-items-center gap-2 pt-0 fs-5">
                   <span class="d-inline-block bg-primary rounded-circle p-1"></span>

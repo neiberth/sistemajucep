@@ -91,14 +91,6 @@
                                     <input class="form-check-input" type="radio" name="arquivo" id="arquivo" value="0" {{($usuario->arquivo == 0)? 'checked': '' }}>
                                 </div>
 
-                                <div class="col-md-6 themed-grid-col bg-dark-subtle">Leiloeiro</div>
-                                <div class="col-md-3 themed-grid-col bg-dark-subtle">
-                                    <input class="form-check-input" type="radio" name="leiloeiro" id="leiloeiro" value="1" {{($usuario->leiloeiro == 1)? 'checked': '' }}>
-                                </div>
-                                <div class="col-md-3 themed-grid-col bg-dark-subtle">
-                                    <input class="form-check-input" type="radio" name="leiloeiro" id="leiloeiro" value="0" {{($usuario->leiloeiro == 0)? 'checked': '' }}>
-                                </div>
-
                                 <div class="col-md-6 themed-grid-col bg-body-secondary">RH</div>
                                 <div class="col-md-3 themed-grid-col bg-body-secondary">
                                     <input class="form-check-input" type="radio" name="rh" id="rh" value="1" {{($usuario->rh == 1)? 'checked': '' }}>

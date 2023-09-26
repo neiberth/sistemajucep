@@ -114,13 +114,6 @@
                                         </div>
                                     </div>
                                     <div class="row mb-0 ">
-                                        <div class="form-check px-1 mx-1 col-md-8 col-form-check bg-dark-subtle">
-                                            <label class="form-check-label text-md-start fw-semibold" for="leiloeiro">Leiloeiro</label>
-                                            <input class="form-check-input " type="radio" name="leiloeiro" id="leiloeiro" value="0" checked style="float: right; margin-right: 2.5em;">
-                                            <input class="form-check-input " type="radio" name="leiloeiro" id="leiloeiro" value="1" style="float: right; margin-right: 3.5em;">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-0 ">
                                         <div class="form-check px-1 mx-1 col-md-8 col-form-check bg-body-secondary">
                                             <label class="form-check-label text-md-start fw-semibold" for="rh">RH</label>
                                             <input class="form-check-input " type="radio" name="rh" id="rh" value="0" checked style="float: right; margin-right: 2.5em;">

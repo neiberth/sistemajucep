@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('login');
             $table->boolean('admin')->default($value=0);
-            $table->boolean('leiloeiro')->default($value=0);
+            $table->boolean('rh')->default($value=0);
             $table->boolean('arquivo')->default($value=0);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

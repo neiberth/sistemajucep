@@ -50,7 +50,6 @@ class UsuarioController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'login' => ['required', 'string', 'max:100'],
                 'admin' => ['boolean'],
-                'leiloeiro' => ['boolean'],
                 'arquivo' => ['boolean'],
                 'rh' => ['boolean'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
