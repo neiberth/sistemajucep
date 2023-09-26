@@ -17,6 +17,7 @@
   - create;
   - show;
   - edite;
+  - busca;
 
 ### Caixa
   - ~~template~~ 
@@ -24,6 +25,7 @@
   - create;
   - show;
   - edite;
+  - busca;
 
 ### Leiloeiro
 - ~~template ~~
@@ -31,6 +33,7 @@
   - create;
   - show;
   - edite;
+  - busca;
 
 ### Permissões
 - ~~template~~
@@ -42,11 +45,12 @@
   - ~~create;~~
   - show;
   - edite;
+  - busca;
 
 ### Usuarios
 - ~~template~~
   - ~~Index;~~
   - ~~create;~~
   - ~~show;~~
-  -~~edite;~~
+  - ~~edite;~~
   - busca;
