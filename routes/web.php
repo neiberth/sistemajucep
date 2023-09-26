@@ -49,10 +49,6 @@ Route::prefix('sistema')->middleware(['arquivo'])->group(function(){
     Route::resource('processo', ProcessoController::class);
 });
 
-Route::prefix('sistema')->middleware(['leiloeiro'])->group(function(){
-    Route::resource('leiloeiro', LeiloeiroController::class);
-});
-
 Route::prefix('sistema')->middleware(['rh'])->group(function(){
     Route::resource('rh', RecursosHumanosController::class);
 });

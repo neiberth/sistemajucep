@@ -34,12 +34,6 @@
                 </li>
 
                 <li class="nav-item" disabled>
-                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('leiloeiro.index') }}">
-                        <i class="fas fa-search primary float-left"></i>
-                        Leiloeiros
-                    </a>
-                </li>
-                <li class="nav-item" disabled>
                     <a class="nav-link d-flex align-items-center gap-2" href="{{ route('rh.index') }}">
                         <i class="far fa-address-card primary float-left"></i>
                         Recursos Humanos

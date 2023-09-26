@@ -53,26 +53,8 @@
                 </div>
 
             </div>
-            <div class="col-auto mb-3">
-                <div class="card shadow">
-                    <a href="{{ route('leiloeiro.index') }}"class="btn btn-outline-primary p-0 m-0" aria-current="page">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="media d-flex justify-content-between">
-                                    <div class="align-self-center">
-                                        <i class="fas fa-search fa-3x float-left"></i>
-                                    </div>
-                                    <div class="media-body text-end">
-                                        <h3>Leiloeiros</h3>
-                                        <span>Cadastro dos Leiloeiros</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
 
-            </div>
+            
             <div class="col-auto mb-3">
                 <div class="card shadow">
                     <a href="{{ route('rh.index')}}" type="button" class="btn btn-outline-primary p-0 m-0" aria-current="page">
