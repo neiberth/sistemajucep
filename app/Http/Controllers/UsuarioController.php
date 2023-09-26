@@ -28,7 +28,7 @@ class UsuarioController extends Controller
         $usuarios = User::all();
 
         //dd($usuarios);
-        return view('sistema.usuario.index', compact('usuarios'));
+        return view('sistema.administrativo.usuario.index', compact('usuarios'));
 
     }
 
@@ -37,7 +37,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view ('sistema.usuario.create');
+        return view ('sistema.administrativo.usuario.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class UsuarioController extends Controller
      */
     public function show(User $usuario)
     {
-        return view('sistema.usuario.show', compact('usuario'));
+        return view('sistema.administrativo.usuario.show', compact('usuario'));
     }
 
     /**
@@ -74,7 +74,7 @@ class UsuarioController extends Controller
      */
     public function edit(User $usuario)
     {
-        return view('sistema.usuario.edit', compact('usuario'));
+        return view('sistema.administrativo.usuario.edit', compact('usuario'));
     }
 
     /**

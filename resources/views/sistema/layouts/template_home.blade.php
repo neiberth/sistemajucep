@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <head>
-    <script src="/public/js/color-modes.js"></script>
+    <script src="{{ asset('/js/color-modes.js')}}"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,5 +61,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script></body>
 <script src="https://kit.fontawesome.com/5416d2943c.js" crossorigin="anonymous"></script>
+<script src="{{ asset('/js/mascara.js') }}"></script>
 </body>
 </html>

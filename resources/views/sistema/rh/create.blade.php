@@ -51,8 +51,8 @@
 
                         <div class="col-sm-4">
                             <label for="cpf" class="form-label">{{ __('CPF') }}</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf"
-                                value="{{ old('cpf') }}" required autocomplete="cpf">
+                            <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf" maxlength="14"
+                                value="{{ old('cpf') }}" required autocomplete="cpf" OnKeyPress="formatar('###.###.###-##',this)">
                             <div class="invalid-feedback">
                                 @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -77,8 +77,8 @@
 
                         <div class="col-sm-4">
                             <label for="telefone" class="form-label">{{ __('Telefone') }}</label>
-                            <input type="text" class="form-control" id="telefone" placeholder="(83)9 0000-0000"
-                                name="telefone" value="{{ old('telefone') }}" required autocomplete="telefone">
+                            <input type="text" class="form-control" id="telefone" placeholder="(99)9.9999-9999" maxlength="15"
+                                name="telefone" value="{{ old('telefone') }}" required autocomplete="telefone" OnKeyPress="formatar('(##)#.####-#####',this)">
                             <div class="invalid-feedback">
                                 @error('telefone')
                                     <span class="invalid-feedback" role="alert">
@@ -130,9 +130,18 @@
                         </div>
 
                         <div class="col-6">
-                            <label for="cidade" class="form-label">{{ __('Cidade') }}</label>
-                            <input type="text" class="form-control" id="cidade" placeholder="João Pessoa"
-                                name="cidade" value="{{ old('cidade') }}" required autocomplete="cidade">
+                            <label for="cidade" class="form-label" for="municipio">{{ __('Cidade') }}</label>
+                            <select class="form-select" id="municipio" name="cidade">
+                                <option selected>Municípios</option>
+                                <option value="cidade">João Pessoa</option>
+                                <option value="cidade">Campina Grande</option>
+                                <option value="cidade">Itabaiana</option>
+                                <option value="cidade">Guarabira</option>
+                                <option value="cidade">Patos</option>
+                                <option value="cidade">Sousa</option>
+                                <option value="cidade">Catolé do Rocha</option>
+                                <option value="cidade">Cajazeiras</option>
+                            </select>
                             <div class="invalid-feedback">
                                 @error('cidade')
                                     <span class="invalid-feedback" role="alert">
@@ -196,7 +205,7 @@
 
                         <div class="col-6">
                             <label for="setor" class="form-label">{{ __('Setor') }}</label>
-                            <input type="text" class="form-control" id="setor" placeholder="" name="setor"
+                            <input type="text" class="form-control text-uppercase" id="setor" placeholder="" name="setor"
                                 value="{{ old('setor') }}" required autocomplete="setor">
                             <div class="invalid-feedback">
                                 @error('setor')

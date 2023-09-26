@@ -19,7 +19,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
-                        href="{{ route('usuario.index') }}">
+                        href="{{ route('administrativo.index') }}">
                         <i class="fas fa-user-shield primary float-left"></i>
                         Administrador
                     </a>

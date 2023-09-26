@@ -6,6 +6,7 @@
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('sistema.home') }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('administrativo.index') }}">Administrativo</a></li>
           <li class="breadcrumb-item active" aria-current="page">Usuário</li>
         </ol>
     </nav>
@@ -35,7 +36,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom"></div>
       <h2>Lista de Usuários no Sistema</h2>

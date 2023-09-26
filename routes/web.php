@@ -9,6 +9,9 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\SistemaPermissaoController;
 use App\Http\Controllers\ArquivoController;
 use App\Http\Controllers\RecursosHumanosController;
+use App\Http\Controllers\AdministrativoController;
+use App\Http\Controllers\ConfiguracaoController;
+use App\Http\Controllers\CidadesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +43,9 @@ Route::prefix('sistema')->group(function(){
 });
 
 Route::prefix('sistema')->middleware(['admin'])->group(function(){
+    Route::get('administrativo', [AdministrativoController::class, 'index'])->name('administrativo.index');
+    Route::get('configuracao', [ConfiguracaoController::class, 'index'])->name('configuracao.index');
+    Route::resource('cidade', CidadesController::class);
     Route::resource('usuario', UsuarioController::class);
 });
 
