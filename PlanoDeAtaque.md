@@ -28,7 +28,7 @@
   - busca;
 
 ### Leiloeiro
-- ~~template ~~
+- ~~template~~
   - Index;
   - create;
   - show;
