@@ -18,7 +18,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Novo Município</h5>
                   <p class="card-text">Cadastre um novo município.</p>
-                  <a href="{{ route('usuario.create') }}" class="btn btn-primary">Cadastrar</a>
+                  <a href="{{ route('cidade.create') }}" class="btn btn-primary">Cadastrar</a>
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
                   <h5 class="card-title">Busca por Município</h5>
 
                 <div class="row">
-                    <p class="card-text col-md-2 col-form-label text-md-start">Nome:</p>
+                    <p class="card-text col-md-2 col-form-label text-md-start">Município:</p>
                     <div class="col-md-5">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email">
                     </div>
@@ -49,23 +49,21 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Município</th>
-
+                    <th scope="col">Atualizar</th>
                   </tr>
                 </thead>
                 <tbody>
-                    {{-- @forelse ($usuarios as $usuario)
+                    @forelse ($cidades as $cidade)
                     <tr>
-                        <td>{{ $usuario->name }}</td>
-                        <td>{{ $usuario->login }}</td>
-                        <td>{{ $usuario->email }}</td>
-                        <td><a href="{{ route('usuario.show', $usuario->id) }}"> <i class="bi bi-folder2-open fs-5 text-success"></i></a></td>
-                        <td><a href="{{ route('usuario.edit', $usuario->id) }}"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>
+                        <td>{{ $cidade->id }}</td>
+                        <td>{{ $cidade->municipio }}</td>
+                        <td><a href="{{ route('cidade.edit', $cidade->id) }}"> <i class="fa-solid fa-city fs-5 text-danger"></i></a></td>
                     </tr>
                     @empty
                     <tr>
-                      <td colspan="5"><p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizada</p></td>
+                      <td colspan="5"><p class="fs-5 fw-medium text-danger mb-0">Nenhum Município foi Localizado</p></td>
                     </tr>
-                    @endforelse --}}
+                    @endforelse
                 </tbody>
               </table>
             </div>

@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('endereco');
             $table->string('complemento')->nullable();
-            $table->string('cidade');
             $table->date('data_inicio');
             $table->string('validade')->nullable();
             $table->date('data_fim')->nullable();
@@ -29,6 +28,8 @@ return new class extends Migration
             $table->string('setor')->nullable();
             $table->string('contrato');
             $table->string('path')->nullable();
+            
+            $table->foreignId('cidades_id')->constrained('cidades')->onDelete('cascade');
             $table->timestamps();
         });
     }

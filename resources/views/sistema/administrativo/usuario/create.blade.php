@@ -5,6 +5,7 @@
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('sistema.home') }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('administrativo.index') }}">Administrativo</a></li>
           <li class="breadcrumb-item"><a href="{{ route('usuario.index') }}">Usuário</a></li>
           <li class="breadcrumb-item active" aria-current="page">Cadastro</li>
         </ol>
@@ -136,8 +137,6 @@
             </div>
         </div>
     </div>
-
-
 
 </main>
 @endsection

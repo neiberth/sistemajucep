@@ -12,4 +12,9 @@ class Cidades extends Model
     protected $fillable =[
         'municipio',
     ];
+
+    public function recursosHumanos()
+    {
+        return $this->hasMany(RecursosHumanos::class);
+    }
 }

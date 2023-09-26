@@ -130,20 +130,15 @@
                         </div>
 
                         <div class="col-6">
-                            <label for="cidade" class="form-label" for="municipio">{{ __('Cidade') }}</label>
-                            <select class="form-select" id="municipio" name="cidade">
-                                <option selected>Municípios</option>
-                                <option value="cidade">João Pessoa</option>
-                                <option value="cidade">Campina Grande</option>
-                                <option value="cidade">Itabaiana</option>
-                                <option value="cidade">Guarabira</option>
-                                <option value="cidade">Patos</option>
-                                <option value="cidade">Sousa</option>
-                                <option value="cidade">Catolé do Rocha</option>
-                                <option value="cidade">Cajazeiras</option>
+                            <label for="municipio" class="form-label" for="municipio">{{ __('Cidade') }}</label>
+                            <select class="form-select" id="selectCaixa" name="cidades_id" aria-label="Default select example">
+                                <option selected>Cidade</option>
+                                @foreach ($cidades as $cidade)
+                                    <option value="{{$cidade->id}}">{{$cidade->municipio}}</option>
+                                @endforeach
                             </select>
                             <div class="invalid-feedback">
-                                @error('cidade')
+                                @error('municipio')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

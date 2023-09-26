@@ -10,9 +10,12 @@ class CidadesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('sistema.administrativo.configuracao.cidade.index');
+        $cidades = Cidades::orderBy('municipio', 'ASC');
+        $cidades = $cidades->paginate(10);
+
+        return view('sistema.administrativo.configuracao.cidade.index', compact('cidades'));
     }
 
     /**
@@ -20,7 +23,7 @@ class CidadesController extends Controller
      */
     public function create()
     {
-        //
+        return view('sistema.administrativo.configuracao.cidade.create');
     }
 
     /**
@@ -28,7 +31,18 @@ class CidadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->input('_token') != ''){
+            $validacaoCampo =[
+                'municipio' => 'required|max:50',
+            ];
+            $msgError = [
+                'required' => 'Campo Obrigatorio',
+                'max' => 'Campo com maximo 50 caracteres',
+            ];
+            $request->validate($validacaoCampo, $msgError);
+        }
+        Cidades::create($request->all());
+        return redirect()->route('cidade.index');
     }
 
     /**

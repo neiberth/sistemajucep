@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RecursosHumanos;
+use App\Models\Cidades;
 use Illuminate\Http\Request;
 
 class RecursosHumanosController extends Controller
@@ -20,7 +21,8 @@ class RecursosHumanosController extends Controller
      */
     public function create()
     {
-        return view('sistema.rh.create');
+        $cidades = Cidades::all();
+        return view('sistema.rh.create', compact('cidades'));
     }
 
     /**
@@ -28,7 +30,34 @@ class RecursosHumanosController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        if($request->input('_token') !=''){
+            $validacaoCampo =[
+                'matricula' => 'required|integer',
+                'nome' => 'required|string|max:50',
+                'cpf' => 'required|string|max:14',
+                'rg' => 'required|string|max:25',
+                'telefone' => 'required|string|max:15',
+                'email' =>'required|email|max:255',
+                'endereco' => 'required|max:500',
+                'complemento' => 'max:255',
+                'cidade' => 'max:255',
+                'data_inicio' => 'max:255',
+                'validade' => 'max:255',
+                'data_fim' => 'max:255',
+                'funcao' => 'max:255',
+                'setor' => 'max:255',
+                'contrato' => 'max:255',
+                'path' => 'max:255',
+                'cidades_id' => 'required|integer',
+            ];
+            $msgErros = [
+                'required' => 'Campo obrigatorio',
+                'integer' => 'Campo só com números',
+                'email' => 'Email não é valido',
+                'cidades_id.intever' => 'Campo Obrigatorio',
+            ];
+
+        }
         RecursosHumanos::create($request->all());
         return redirect()->route('rh.index');
     }

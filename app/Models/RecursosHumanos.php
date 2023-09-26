@@ -18,7 +18,6 @@ class RecursosHumanos extends Model
         'email',
         'endereco',
         'complemento',
-        'cidade',
         'data_inicio',
         'validade',
         'data_fim',
@@ -26,5 +25,11 @@ class RecursosHumanos extends Model
         'setor',
         'contrato',
         'path',
+        'cidades_id',
     ];
+
+    public function cidades()
+    {
+        return $this->belongsTo(Cidades::class);
+    }
 }
