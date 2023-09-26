@@ -1,51 +1,51 @@
 ## Plano do Desenvolvimento
 
 ### Template Welcome
-- <sup> welcome.blade.php;</sup>
+- ~~welcome.blade.php;~~
 
 ### Template auth
-- <sup> auth.blade.php;</sup>
+- ~~auth.blade.php;~~
 
 ### Template sistema
 
 - Arquivo
- - <sup> template </sup>
+ - ~~template~~
  - Processo
-  - <sup> template </sup>
+  - ~~template~~
   - Index;
   - create;
   - show;
   - edite;
 
  - Caixa
-  - <sup> template </sup> 
+  - ~~template~~ 
   - Index;
   - create;
   - show;
   - edite;
 
 - Leiloeiro
-- <sup> template </sup>
+- ~~template ~~
   - Index;
   - create;
   - show;
   - edite;
 
 - Permissões
-- <sup> template </sup>
-  - <sup>Permissão negada;</sup>
+- ~~template~~
+  - ~~Permissão negada;~~
 
 - Recursos Humanos
-- <sup> template </sup>
-  - <sup>Index;</sup>
-  - <sup>create;</sup>
+- ~~template~~
+  - ~~Index;~~
+  - ~~create;~~
   - show;
   - edite;
 
 - Usuarios
-- <sup> template </sup>
-  - <sup>Index;</sup>
-  - <sup>create;</sup>
-  - <sup>show;</sup>
-  - <sup>edite;</sup>
+- ~~template~~
+  - ~~Index;~~
+  - ~~create;~~
+  - ~~show;~~
+  -~~edite;~~
   - busca;
