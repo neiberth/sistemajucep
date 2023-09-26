@@ -1,48 +1,49 @@
-## Plano do Desenvolvimento
+# Plano do Desenvolvimento
 
-### Template Welcome
+## Template Welcome
 - ~~welcome.blade.php;~~
 
-### Template auth
+## Template auth
 - ~~auth.blade.php;~~
 
-### Template sistema
+## Template sistema
 
-- Arquivo
+### Arquivo
  - ~~template~~
- - Processo
+
+### Processo
   - ~~template~~
   - Index;
   - create;
   - show;
   - edite;
 
- - Caixa
+### Caixa
   - ~~template~~ 
   - Index;
   - create;
   - show;
   - edite;
 
-- Leiloeiro
+### Leiloeiro
 - ~~template ~~
   - Index;
   - create;
   - show;
   - edite;
 
-- Permissões
+### Permissões
 - ~~template~~
   - ~~Permissão negada;~~
 
-- Recursos Humanos
+### Recursos Humanos
 - ~~template~~
   - ~~Index;~~
   - ~~create;~~
   - show;
   - edite;
 
-- Usuarios
+### Usuarios
 - ~~template~~
   - ~~Index;~~
   - ~~create;~~
