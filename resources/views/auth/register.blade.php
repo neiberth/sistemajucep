@@ -93,7 +93,7 @@
                                     <div class="form-check px-1 mx-1 col-md-8 col-form-check">
                                         <label class="form-check-label text-md-start" for="admin">Administrador</label>
                                         <input class="form-check-input" type="radio" name="admin" id="admin" value="0" style="float: right; margin-right: 2.5em;" checked>
-                                        <input class="form-check-input" type="radio" name="admin" id="admin" value="1" style="float: right; margin-right: 3.5em;"disabled>
+                                        <input class="form-check-input" type="radio" name="admin" id="admin" value="1" style="float: right; margin-right: 3.5em;">
                                     </div>
                                 </div>
                                 <div class="row mb-1 ">

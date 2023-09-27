@@ -11,9 +11,13 @@ class RecursosHumanosController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('sistema.rh.index');
+        $listaRHs = RecursosHumanos::orderBy('nome', 'ASC');
+
+        $listaRHs = $listaRHs->paginate(10);
+        //$contColaboradores = $listaRHs->cont();
+        return view('sistema.rh.index', compact('listaRHs'));
     }
 
     /**
@@ -65,9 +69,10 @@ class RecursosHumanosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(RecursosHumanos $recursosHumanos)
+    public function show(RecursosHumanos $rh)
     {
-        //
+        return view ('sistema.rh.show', compact('rh'));
+
     }
 
     /**

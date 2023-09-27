@@ -59,19 +59,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @forelse ($usuarios as $usuario)
+                    @forelse ($listaRHs as $listaRH)
                 <tr>
-                    <td>{{ $usuario->name }}</td>
-                    <td>{{ $usuario->login }}</td>
-                    <td>{{ $usuario->email }}</td>
-                    <td><a href="#"> <i class="bi bi-folder2-open fs-5 text-success"></i></a></td>
+                    <td>{{ $listaRH->matricula }}</td>
+                    <td>{{ $listaRH->nome }}</td>
+                    <td>{{ $listaRH->email }}</td>
+                    <td>{{ $listaRH->telefone }}</td>
+                    <td><a href="{{ route('rh.show', $listaRH->id) }}"> <i class="bi bi-folder2-open fs-5 text-success"></i></a></td>
                     <td><a href="#"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>
                 </tr>
                 @empty
                 <tr>
                   <td colspan="5"><p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizada</p></td>
                 </tr>
-                @endforelse --}}
+                @endforelse
                 </tbody>
             </table>
         </div>
