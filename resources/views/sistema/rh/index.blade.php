@@ -5,7 +5,7 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Usuário</li>
+                <li class="breadcrumb-item active" aria-current="page">Funcionário</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
@@ -43,7 +43,7 @@
         <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
-        <h2>Lista de Colaboradoers no Sistema</h2>
+        <h2>Lista de Colaboradores no Sistema</h2>
 
 
         <div class="table-responsive small mb-0">
@@ -62,7 +62,7 @@
                     @forelse ($listaRHs as $listaRH)
                 <tr>
                     <td>{{ $listaRH->matricula }}</td>
-                    <td>{{ $listaRH->nome }}</td>
+                    <td class="text-capitalize">{{ $listaRH->nome }}</td>
                     <td>{{ $listaRH->email }}</td>
                     <td>{{ $listaRH->telefone }}</td>
                     <td><a href="{{ route('rh.show', $listaRH->id) }}"> <i class="bi bi-folder2-open fs-5 text-success"></i></a></td>
