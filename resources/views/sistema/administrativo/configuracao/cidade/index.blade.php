@@ -10,63 +10,70 @@
                 <li class="breadcrumb-item active" aria-current="page">Cidade</li>
             </ol>
         </nav>
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
+        <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
         <div class="row">
             <div class="col-sm-6 mb-3 mb-sm-0">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Novo Município</h5>
-                  <p class="card-text">Cadastre um novo município.</p>
-                  <a href="{{ route('cidade.create') }}" class="btn btn-primary">Cadastrar</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Busca por Município</h5>
-
-                <div class="row">
-                    <p class="card-text col-md-2 col-form-label text-md-start">Município:</p>
-                    <div class="col-md-5">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Novo Município</h5>
+                        <p class="card-text">Cadastre um novo município.</p>
+                        <a href="{{ route('cidade.create') }}" class="btn btn-primary"><i class="fa-solid fa-user-plus me-1"></i>Cadastrar</a>
                     </div>
                 </div>
-                <a href="#" class="btn btn-primary">Busca</a>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <form action="{{ route('cidade.index') }}" method="GET">
+                        <div class="card-body">
+                            <h5 class="card-title">Busca por Município</h5>
+                            <div class="row">
+                                <p class="card-text col-md-2 col-form-label text-md-start">Município</p>
+                                <div class="col-md-5">
+                                    <input id="municipio" type="text"class="form-control " name="municipio">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-1"> <i class="fa-solid fa-magnifying-glass me-1"></i>Localizar</button>
+                        </div>
+                    </form>
                 </div>
-              </div>
             </div>
         </div>
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom"></div>
-          <h2>Lista dos Municípios</h2>
+        <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
+        </div>
+        <h2>Lista dos Municípios</h2>
 
 
-            <div class="table-responsive small mb-0">
-              <table class="table table-striped table-sm">
+        <div class="table-responsive small mb-0">
+            <table class="table table-striped table-sm">
                 <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Município</th>
-                    <th scope="col">Atualizar</th>
-                  </tr>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Município</th>
+                        <th scope="col">Atualizar</th>
+                    </tr>
                 </thead>
                 <tbody>
                     @forelse ($cidades as $cidade)
-                    <tr>
-                        <td>{{ $cidade->id }}</td>
-                        <td>{{ $cidade->municipio }}</td>
-                        <td><a href="{{ route('cidade.edit', $cidade->id) }}"> <i class="fa-solid fa-city fs-5 text-danger"></i></a></td>
-                    </tr>
+                        <tr>
+                            <td>{{ $cidade->id }}</td>
+                            <td>{{ $cidade->municipio }}</td>
+                            <td><a href="{{ route('cidade.edit', $cidade->id) }}"> <i
+                                        class="fa-solid fa-city fs-5 text-danger"></i></a></td>
+                        </tr>
                     @empty
-                    <tr>
-                      <td colspan="5"><p class="fs-5 fw-medium text-danger mb-0">Nenhum Município foi Localizado</p></td>
-                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <p class="fs-5 fw-medium text-danger mb-0">Nenhum Município foi Localizado</p>
+                            </td>
+                        </tr>
                     @endforelse
                 </tbody>
-              </table>
-            </div>
+            </table>
+        </div>
 
     </main>
 @endsection

@@ -15,6 +15,10 @@ class RecursosHumanosController extends Controller
     {
         $listaRHs = RecursosHumanos::orderBy('nome', 'ASC');
 
+        if($request->nome){
+            $listaRHs->where('nome', 'like', "%$request->nome%");
+        }
+
         $listaRHs = $listaRHs->paginate(10);
         //$contColaboradores = $listaRHs->cont();
         return view('sistema.rh.index', compact('listaRHs'));

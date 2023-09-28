@@ -23,19 +23,19 @@
 
             <div class="col-sm-6">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Busca por Nome no sistema</h5>
-
-                        <div class="row">
-                            <p class="card-text col-md-2 col-form-label text-md-start">Nome:</p>
-                            <div class="col-md-5">
-                                <input id="name" type="text"
-                                    class="form-control @error('name') is-invalid @enderror" name="name" required
-                                    autocomplete="name">
+                    <form action="{{ route('rh.index') }}" method="get">
+                        <div class="card-body">
+                            <h5 class="card-title">Busca por Nome no sistema</h5>
+                            <div class="row">
+                                <p class="card-text col-md-2 col-form-label text-md-start">Nome:</p>
+                                <div class="col-md-5">
+                                    <input id="nome" type="text" class="form-control text-capitalize" name="nome">
+                                </div>
                             </div>
+                            <button class="btn btn-primary mt-1"><i
+                                    class="fa-solid fa-magnifying-glass me-1"></i>Localizar</button>
                         </div>
-                        <a href="#" class="btn btn-primary">Busca</a>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -60,19 +60,22 @@
                 </thead>
                 <tbody>
                     @forelse ($listaRHs as $listaRH)
-                <tr>
-                    <td>{{ $listaRH->matricula }}</td>
-                    <td class="text-capitalize">{{ $listaRH->nome }}</td>
-                    <td>{{ $listaRH->email }}</td>
-                    <td>{{ $listaRH->telefone }}</td>
-                    <td><a href="{{ route('rh.show', $listaRH->id) }}"> <i class="bi bi-folder2-open fs-5 text-success"></i></a></td>
-                    <td><a href="#"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>
-                </tr>
-                @empty
-                <tr>
-                  <td colspan="5"><p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizada</p></td>
-                </tr>
-                @endforelse
+                        <tr>
+                            <td>{{ $listaRH->matricula }}</td>
+                            <td class="text-capitalize">{{ $listaRH->nome }}</td>
+                            <td>{{ $listaRH->email }}</td>
+                            <td>{{ $listaRH->telefone }}</td>
+                            <td><a href="{{ route('rh.show', $listaRH->id) }}"> <i
+                                        class="bi bi-folder2-open fs-5 text-success"></i></a></td>
+                            <td><a href="#"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="5">
+                                <p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizada</p>
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

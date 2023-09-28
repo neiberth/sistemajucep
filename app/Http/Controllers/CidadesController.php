@@ -13,6 +13,10 @@ class CidadesController extends Controller
     public function index(Request $request)
     {
         $cidades = Cidades::orderBy('municipio', 'ASC');
+        
+        if($request->municipio){
+            $cidades->where('municipio', 'like', "%$request->municipio%");
+        }
         $cidades = $cidades->paginate(10);
 
         return view('sistema.administrativo.configuracao.cidade.index', compact('cidades'));
