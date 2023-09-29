@@ -14,14 +14,30 @@ class RecursosHumanosController extends Controller
     public function index(Request $request)
     {
         $listaRHs = RecursosHumanos::orderBy('nome', 'ASC');
+        $cont = RecursosHumanos::all();
 
         if($request->nome){
             $listaRHs->where('nome', 'like', "%$request->nome%");
         }
+          //ultiliza a Paginação em 10 em 10
+          $listaRHs = $listaRHs->paginate(10);
 
-        $listaRHs = $listaRHs->paginate(10);
-        //$contColaboradores = $listaRHs->cont();
-        return view('sistema.rh.index', compact('listaRHs'));
+        //faz a Contagem de todos os Funcionarios
+        $contColaboradores = $cont->count();
+
+        //faz a Contagem de todos os Efetivos
+        $contEfetivo = $cont->where('contrato', 'like', "efetivo");
+        $contEfetivo = $contEfetivo->count();
+        //faz a Contagem de todos os Comissionados
+        $contComissionado = $cont->where('contrato', 'like', "comissionado");
+        $contComissionado = $contComissionado->count();
+        //faz a Contagem de todos os Prestadores
+        $contPrestador = $cont->where('contrato', 'like', "prestador");
+        $contPrestador = $contPrestador->count();
+
+
+
+        return view('sistema.rh.index', compact('listaRHs', 'contColaboradores', 'contEfetivo', 'contComissionado', 'contPrestador'));
     }
 
     /**

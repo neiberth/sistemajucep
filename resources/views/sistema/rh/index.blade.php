@@ -10,6 +10,55 @@
         </nav>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
+
+        <div class="row row-cols-1 row-cols-md-4 mb-0 text-center">
+            <div class="col">
+                <div class="card mb-2 rounded-3 shadow-sm text-bg-primary">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Total de Funcionários</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-primary fw-light">{{$contColaboradores}}</small></h1>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Efetivo</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-secondary fw-light">{{ $contEfetivo}}</small></h1>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Comissionado</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-secondary fw-light">{{$contComissionado}}</small></h1>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Prestador de Serviço</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-secondary fw-light">{{ $contPrestador }}</small></h1>
+                  </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-1 mb-1 border-bottom">
+        </div>
+
         <div class="row">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <div class="card">
@@ -79,6 +128,10 @@
                 </tbody>
             </table>
         </div>
-
+        <div class="row justify-content-center">
+            <div class="col-auto">
+              {{ $listaRHs->links() }}
+            </div>
+          </div>
     </main>
 @endsection
