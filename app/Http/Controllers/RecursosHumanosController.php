@@ -84,6 +84,7 @@ class RecursosHumanosController extends Controller
                 'email' => 'Email não é valido',
                 'cidades_id.intever' => 'Campo Obrigatorio',
             ];
+            $request->validate($validacaoCampo, $msgErros);
 
         }
         RecursosHumanos::create($request->all());
@@ -102,9 +103,9 @@ class RecursosHumanosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RecursosHumanos $recursosHumanos)
+    public function edit(RecursosHumanos $rh)
     {
-        //
+        return view ('sistema.rh.edit', compact('rh'));
     }
 
     /**
@@ -112,7 +113,7 @@ class RecursosHumanosController extends Controller
      */
     public function update(Request $request, RecursosHumanos $recursosHumanos)
     {
-        //
+
     }
 
     /**

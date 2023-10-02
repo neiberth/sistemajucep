@@ -133,7 +133,7 @@
                             <td>{{ $listaRH->telefone }}</td>
                             <td><a href="{{ route('rh.show', $listaRH->id) }}"> <i
                                         class="bi bi-folder2-open fs-5 text-success"></i></a></td>
-                            <td><a href="#"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>
+                            <td><a href="{{ route('rh.edit', $listaRH->id) }}"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>
                         </tr>
                     @empty
                         <tr>

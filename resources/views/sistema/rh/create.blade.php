@@ -23,69 +23,60 @@
                     @csrf
                     <div class="row g-3">
                         <div class="col-sm-3">
-                            <label for="matricula"
-                                class="form-label @error('matricula') is-invalid @enderror">{{ __('Matrícula') }}</label>
+                            <label for="matricula" class="form-label">{{ __('Matrícula') }}</label>
                             <input type="text" class="form-control" id="matricula" placeholder="Matrícula"
-                                name="matricula" value="{{ old('matricula') }}" required autocomplete="matricula" autofocus>
-                            <div class="invalid-feedback">
-                                @error('matricula')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                name="matricula" required autocomplete="matricula" autofocus>
+                            @if ($errors->has('matricula'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('matricula') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-sm-9">
                             <label for="nome" class="form-label">{{ __('Nome Completo') }}</label>
                             <input type="text" class="form-control" id="nome" placeholder="Nome Completo"
                                 name="nome" value="{{ old('nome') }}" required autocomplete="nome">
-                            <div class="invalid-feedback">
-                                @error('nome')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                @if ($errors->has('nome'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('nome') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-sm-4">
                             <label for="cpf" class="form-label">{{ __('CPF') }}</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf" maxlength="14"
-                                value="{{ old('cpf') }}" required autocomplete="cpf" OnKeyPress="formatar('###.###.###-##',this)">
-                            <div class="invalid-feedback">
-                                @error('cpf')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf"
+                                maxlength="14" value="{{ old('cpf') }}" required autocomplete="cpf"
+                                OnKeyPress="formatar('###.###.###-##',this)">
+                                @if ($errors->has('cpf'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('cpf') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-sm-4">
                             <label for="rg" class="form-label">{{ __('RG') }}</label>
                             <input type="text" class="form-control" id="rg" placeholder="RG" name="rg"
                                 value="{{ old('rg') }}" required autocomplete="rg">
-                            <div class="invalid-feedback">
-                                @error('rg')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                @if ($errors->has('nome'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('nome') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-sm-4">
                             <label for="telefone" class="form-label">{{ __('Telefone') }}</label>
-                            <input type="text" class="form-control" id="telefone" placeholder="(99)9.9999-9999" maxlength="15"
-                                name="telefone" value="{{ old('telefone') }}" required autocomplete="telefone" OnKeyPress="formatar('(##)#.####-#####',this)">
-                            <div class="invalid-feedback">
-                                @error('telefone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <input type="text" class="form-control" id="telefone" placeholder="(99)9.9999-9999"
+                                maxlength="15" name="telefone" value="{{ old('telefone') }}" required
+                                autocomplete="telefone" OnKeyPress="formatar('(##)#.####-#####',this)">
+                                @if ($errors->has('nome'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('nome') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-12">
@@ -131,10 +122,11 @@
 
                         <div class="col-6">
                             <label for="municipio" class="form-label" for="municipio">{{ __('Cidade') }}</label>
-                            <select class="form-select" id="selectCaixa" name="cidades_id" aria-label="Default select example">
+                            <select class="form-select" id="selectCaixa" name="cidades_id"
+                                aria-label="Default select example">
                                 <option selected>Cidade</option>
                                 @foreach ($cidades as $cidade)
-                                    <option value="{{$cidade->id}}">{{$cidade->municipio}}</option>
+                                    <option value="{{ $cidade->id }}">{{ $cidade->municipio }}</option>
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
@@ -200,8 +192,8 @@
 
                         <div class="col-6">
                             <label for="setor" class="form-label">{{ __('Setor') }}</label>
-                            <input type="text" class="form-control text-uppercase" id="setor" placeholder="" name="setor"
-                                value="{{ old('setor') }}" required autocomplete="setor">
+                            <input type="text" class="form-control text-uppercase" id="setor" placeholder=""
+                                name="setor" value="{{ old('setor') }}" required autocomplete="setor">
                             <div class="invalid-feedback">
                                 @error('setor')
                                     <span class="invalid-feedback" role="alert">
