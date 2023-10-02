@@ -11,6 +11,7 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
 
+
         <div class="row row-cols-1 row-cols-md-4 mb-0 text-center">
             <div class="col">
                 <div class="card mb-2 rounded-3 shadow-sm text-bg-primary">
@@ -52,41 +53,57 @@
                   </div>
                 </div>
             </div>
+        </div>
 
 
+        <div class="row text-center">
+            <div class="col-3">
+                <div class="card mb-1 rounded-1 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Novo Colaborador</h5>
+
+                        <a href="{{ route('rh.create') }}" class="btn btn-primary">Cadastrar</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div class="card">
+                    <form action="{{ route('rh.index') }}" method="get">
+                        <div class="card-body ">
+                            <h5 class="card-title ">Busca no sistema</h5>
+                            <div class="row">
+                                <p class="card-text col-md-auto col-form-label text-md-start">Nome:</p>
+                                <div class="col-md-3">
+                                    <input id="nome" type="text" class="form-control text-capitalize" name="nome">
+                                </div>
+
+                                <p class="card-text col-md-auto col-form-label text-md-start">Contrato:</p>
+                                <div class="col-md-3">
+                                    <input id="contrato" type="text" class="form-control text-capitalize" name="contrato">
+                                </div>
+
+                                <div class="col">
+                                    <button class="btn btn-primary ">
+                                        <i class="fa-solid fa-magnifying-glass me-1"></i>Localizar
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-1 mb-1 border-bottom">
         </div>
 
         <div class="row">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Novo Colaborador</h5>
-                        <p class="card-text">Cadastro de um novo Funcionario do sistema.</p>
-                        <a href="{{ route('rh.create') }}" class="btn btn-primary">Cadastrar</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-sm-6">
-                <div class="card">
-                    <form action="{{ route('rh.index') }}" method="get">
-                        <div class="card-body">
-                            <h5 class="card-title">Busca por Nome no sistema</h5>
-                            <div class="row">
-                                <p class="card-text col-md-2 col-form-label text-md-start">Nome:</p>
-                                <div class="col-md-5">
-                                    <input id="nome" type="text" class="form-control text-capitalize" name="nome">
-                                </div>
-                            </div>
-                            <button class="btn btn-primary mt-1"><i
-                                    class="fa-solid fa-magnifying-glass me-1"></i>Localizar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
+
         </div>
 
         <div
@@ -121,7 +138,7 @@
                     @empty
                         <tr>
                             <td colspan="5">
-                                <p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizada</p>
+                                <p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizado</p>
                             </td>
                         </tr>
                     @endforelse

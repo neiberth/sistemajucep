@@ -16,6 +16,10 @@ class RecursosHumanosController extends Controller
         $listaRHs = RecursosHumanos::orderBy('nome', 'ASC');
         $cont = RecursosHumanos::all();
 
+        if($request->contrato){
+            $listaRHs->where('contrato', 'like', "%$request->contrato%");
+        }
+
         if($request->nome){
             $listaRHs->where('nome', 'like', "%$request->nome%");
         }
