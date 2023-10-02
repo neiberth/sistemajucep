@@ -74,16 +74,16 @@
                             <h5 class="card-title ">Busca no sistema</h5>
                             <div class="row">
                                 <p class="card-text col-md-auto col-form-label text-md-start">Nome:</p>
-                                <div class="col-md-3">
+                                <div class="col-sm-3">
                                     <input id="nome" type="text" class="form-control text-capitalize" name="nome">
                                 </div>
 
                                 <p class="card-text col-md-auto col-form-label text-md-start">Contrato:</p>
-                                <div class="col-md-3">
+                                <div class="col-sm-3">
                                     <input id="contrato" type="text" class="form-control text-capitalize" name="contrato">
                                 </div>
 
-                                <div class="col">
+                                <div class="col-sm-auto">
                                     <button class="btn btn-primary ">
                                         <i class="fa-solid fa-magnifying-glass me-1"></i>Localizar
                                     </button>
