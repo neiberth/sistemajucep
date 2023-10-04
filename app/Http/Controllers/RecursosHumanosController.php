@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class RecursosHumanosController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -100,49 +110,51 @@ class RecursosHumanosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RecursosHumanos $rh)
+    public function edit(RecursosHumanos $rec_humanos)
     {
         $cidades = Cidades::all();
-        return view('sistema.rh.edit', compact('rh', 'cidades'));
+        //$rh = RecursosHumanos::find($rh->id);
+        //$action = route('rh.update', $rh);
+        return view('sistema.rh.edit', compact('rec_humanos', 'cidades'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RecursosHumanos $rh)
+    public function update(Request $request, RecursosHumanos $rec_humanos)
     {
 
-        if($request->input('_token') != ''){
-            $validacaoCampo = [
-                'matricula' => 'required|integer',
-                'nome' => 'required|string|max:50',
-                'cpf' => 'required|string|max:14',
-                'rg' => 'required|string|max:25',
-                'telefone' => 'required|string|max:15',
-                'email' => 'required|email|max:255',
-                'endereco' => 'required|max:500',
-                'complemento' => 'max:255',
-                'data_inicio' => 'max:255',
-                'validade' => 'max:255',
-                'data_fim' => 'max:255',
-                'funcao' => 'required|max:255',
-                'setor' => 'required|max:255',
-                'contrato' => 'max:255',
-                'path' => 'max:255',
-                'cidades_id' => 'required|integer',
-            ];
-            $msgErros = [
-                'required' => 'Campo Obrigatório',
-                'integer' => 'Campo só com números',
-                'email' => 'Email não é valido',
-                'cidades_id.intever' => 'Campo Obrigatório',
-            ];
-
-            $request->validate($validacaoCampo, $msgErros);
-        }
-
-        $rh = RecursosHumanos::find($rh->id);
-        $rh->update($request->all());
+        //  if($request->input('_token') != ''){
+        //      $validacaoCampo = [
+        //          'matricula' => 'integer',
+        //          'nome' => 'string|max:50',
+        //          'cpf' => 'string|max:14',
+        //          'rg' => 'string|max:25',
+        //          'telefone' => 'string|max:15',
+        //          'email' => 'email|max:255',
+        //          'endereco' => 'max:500',
+        //          'complemento' => 'max:255',
+        //          'data_inicio' => 'max:255',
+        //          'validade' => 'max:255',
+        //          'data_fim' => 'max:255',
+        //          'funcao' => 'max:255',
+        //          'setor' => 'max:255',
+        //          'contrato' => 'max:255',
+        //          'path' => 'max:255',
+        //          'cidades_id' => 'integer',
+        //      ];
+        //      $msgErros = [
+        //          'required' => 'Campo Obrigatório',
+        //          'integer' => 'Campo só com números',
+        //          'email' => 'Email não é valido',
+        //          'cidades_id.intever' => 'Campo Obrigatório',
+        //      ];
+        //      //dd($request->all());
+        //      $request->validate($validacaoCampo, $msgErros);
+        //  }
+        dd($request->all());
+        $rec_humanos = RecursosHumanos::find($rec_humanos->id);
+        $rec_humanos->update($request->all());
 
         return redirect()->route('rh.index');
     }
