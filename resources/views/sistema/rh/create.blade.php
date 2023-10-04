@@ -36,8 +36,8 @@
                         <div class="col-sm-9">
                             <label for="nome" class="form-label">{{ __('Nome Completo') }}</label>
                             <input type="text" class="form-control" id="nome" placeholder="Nome Completo"
-                                name="nome" value="{{ old('nome') }}" required autocomplete="nome">
-                                @if ($errors->has('nome'))
+                                name="nome" required autocomplete="nome">
+                            @if ($errors->has('nome'))
                                 <div class="text-bg-danger ps-2 bg-opacity-75">
                                     {{ $errors->first('nome') }}
                                 </div>
@@ -47,9 +47,8 @@
                         <div class="col-sm-4">
                             <label for="cpf" class="form-label">{{ __('CPF') }}</label>
                             <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf"
-                                maxlength="14" value="{{ old('cpf') }}" required autocomplete="cpf"
-                                OnKeyPress="formatar('###.###.###-##',this)">
-                                @if ($errors->has('cpf'))
+                                maxlength="14" required autocomplete="cpf" OnKeyPress="formatar('###.###.###-##',this)">
+                            @if ($errors->has('cpf'))
                                 <div class="text-bg-danger ps-2 bg-opacity-75">
                                     {{ $errors->first('cpf') }}
                                 </div>
@@ -59,8 +58,8 @@
                         <div class="col-sm-4">
                             <label for="rg" class="form-label">{{ __('RG') }}</label>
                             <input type="text" class="form-control" id="rg" placeholder="RG" name="rg"
-                                value="{{ old('rg') }}" required autocomplete="rg">
-                                @if ($errors->has('nome'))
+                                required autocomplete="rg">
+                            @if ($errors->has('rg'))
                                 <div class="text-bg-danger ps-2 bg-opacity-75">
                                     {{ $errors->first('nome') }}
                                 </div>
@@ -70,11 +69,11 @@
                         <div class="col-sm-4">
                             <label for="telefone" class="form-label">{{ __('Telefone') }}</label>
                             <input type="text" class="form-control" id="telefone" placeholder="(99)9.9999-9999"
-                                maxlength="15" name="telefone" value="{{ old('telefone') }}" required
-                                autocomplete="telefone" OnKeyPress="formatar('(##)#.####-#####',this)">
-                                @if ($errors->has('nome'))
+                                maxlength="15" name="telefone" required autocomplete="telefone"
+                                OnKeyPress="formatar('(##)#.####-#####',this)">
+                            @if ($errors->has('telefone'))
                                 <div class="text-bg-danger ps-2 bg-opacity-75">
-                                    {{ $errors->first('nome') }}
+                                    {{ $errors->first('telefone') }}
                                 </div>
                             @endif
                         </div>
@@ -82,42 +81,35 @@
                         <div class="col-12">
                             <label for="email" class="form-label">{{ __('Email') }}<span
                                     class="text-body-secondary">(Optional)</span></label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                name="email" value="{{ old('email') }}" required autocomplete="email"
-                                placeholder="you@example.com">
-                            <div class="invalid-feedback">
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <input id="email" type="email" class="form-control" name="email"required
+                                autocomplete="email" placeholder="you@example.com">
+                            @if ($errors->has('email'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('email') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-12">
                             <label for="endereco" class="form-label">{{ __('Endereço') }}</label>
                             <input type="text" class="form-control" id="endereco" placeholder="Rua ..."
-                                name="endereco" value="{{ old('endereco') }}" required autocomplete="endereco">
-                            <div class="invalid-feedback">
-                                @error('endereco')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                name="endereco"required autocomplete="endereco">
+                            @if ($errors->has('endereco'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('endereco') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-6">
                             <label for="complemento" class="form-label">{{ __('Complemento') }}</label>
                             <input type="text" class="form-control" id="complemento" placeholder="EX.: apt 000"
-                                name="complemento" value="{{ old('complemento') }}" required autocomplete="complemento">
-                            <div class="invalid-feedback">
-                                @error('complemento')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                name="complemento" required autocomplete="complemento">
+                            @if ($errors->has('complemento'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('complemento') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-6">
@@ -142,65 +134,55 @@
                             <label for="data_inicio" class="form-label">{{ __('Data de assinatura') }}</label>
                             <input type="date" class="form-control" id="data_inicio" placeholder="00/00/0000"
                                 name="data_inicio" value="{{ old('data_inicio') }}" required autocomplete="data_inicio">
-                            <div class="invalid-feedback">
-                                @error('data_inicio')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @if ($errors->has('data_inicio'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('data_inicio') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-4">
                             <label for="validade" class="form-label">{{ __('Validade') }}</label>
                             <input type="text" class="form-control" id="validade" placeholder="EX.: 1 ano"
                                 name="validade" value="{{ old('validade') }}" required autocomplete="validade">
-                            <div class="invalid-feedback">
-                                @error('validade')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @if ($errors->has('validade'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('validade') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-4">
                             <label for="data_fim" class="form-label">{{ __('Data de Termino') }}</label>
                             <input type="date" class="form-control" id="data_fim" placeholder="00/00/0000"
                                 name="data_fim" value="{{ old('data_fim') }}" required autocomplete="data_fim">
-                            <div class="invalid-feedback">
-                                @error('data_fim')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @if ($errors->has('data_fim'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('data_fim') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-6">
                             <label for="funcao" class="form-label">{{ __('Função') }}</label>
                             <input type="text" class="form-control" id="funcao" placeholder="" name="funcao"
                                 value="{{ old('funcao') }}" required autocomplete="funcao">
-                            <div class="invalid-feedback">
-                                @error('funcao')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @if ($errors->has('funcao'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('funcao') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-6">
                             <label for="setor" class="form-label">{{ __('Setor') }}</label>
                             <input type="text" class="form-control text-uppercase" id="setor" placeholder=""
                                 name="setor" value="{{ old('setor') }}" required autocomplete="setor">
-                            <div class="invalid-feedback">
-                                @error('setor')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @if ($errors->has('setor'))
+                                <div class="text-bg-danger ps-2 bg-opacity-75">
+                                    {{ $errors->first('setor') }}
+                                </div>
+                            @endif
                         </div>
                     </div>
 

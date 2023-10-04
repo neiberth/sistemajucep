@@ -30,7 +30,7 @@
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nome Completo') }}</label>
                             <div class="col-md-5">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $usuario->name }}" required autocomplete="name">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ $usuario->name }}" readonly>
                             </div>
                         </div>
 

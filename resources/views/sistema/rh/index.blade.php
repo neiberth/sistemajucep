@@ -60,7 +60,7 @@
             <div class="col-3">
                 <div class="card mb-1 rounded-1 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Novo Colaborador</h5>
+                        <h5 class="card-title">Novo Funcionário</h5>
 
                         <a href="{{ route('rh.create') }}" class="btn btn-primary">Cadastrar</a>
                     </div>
