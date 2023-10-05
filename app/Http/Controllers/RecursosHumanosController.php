@@ -124,34 +124,34 @@ class RecursosHumanosController extends Controller
     public function update(Request $request, RecursosHumanos $rh)
     {
 
-        //  if($request->input('_token') != ''){
-        //      $validacaoCampo = [
-        //          'matricula' => 'integer',
-        //          'nome' => 'string|max:50',
-        //          'cpf' => 'string|max:14',
-        //          'rg' => 'string|max:25',
-        //          'telefone' => 'string|max:15',
-        //          'email' => 'email|max:255',
-        //          'endereco' => 'max:500',
-        //          'complemento' => 'max:255',
-        //          'data_inicio' => 'max:255',
-        //          'validade' => 'max:255',
-        //          'data_fim' => 'max:255',
-        //          'funcao' => 'max:255',
-        //          'setor' => 'max:255',
-        //          'contrato' => 'max:255',
-        //          'path' => 'max:255',
-        //          'cidades_id' => 'integer',
-        //      ];
-        //      $msgErros = [
-        //          'required' => 'Campo Obrigatório',
-        //          'integer' => 'Campo só com números',
-        //          'email' => 'Email não é valido',
-        //          'cidades_id.intever' => 'Campo Obrigatório',
-        //      ];
-        //      //dd($request->all());
-        //      $request->validate($validacaoCampo, $msgErros);
-        //  }
+          if($request->input('_token') != ''){
+              $validacaoCampo = [
+                  'matricula' => 'integer',
+                  'nome' => 'string|max:50',
+                  'cpf' => 'string|max:14',
+                  'rg' => 'string|max:25',
+                  'telefone' => 'string|max:15',
+                  'email' => 'email|max:255',
+                  'endereco' => 'max:500',
+                  'complemento' => 'max:255',
+                  'data_inicio' => 'max:255',
+                  'validade' => 'max:255',
+                  'data_fim' => 'max:255',
+                  'funcao' => 'max:255',
+                  'setor' => 'max:255',
+                  'contrato' => 'max:255',
+                  'path' => 'max:255',
+                  'cidades_id' => 'integer',
+              ];
+              $msgErros = [
+                  'required' => 'Campo Obrigatório',
+                  'integer' => 'Campo só com números',
+                  'email' => 'Email não é valido',
+                  'cidades_id.intever' => 'Campo Obrigatório',
+              ];
+              //dd($request->all());
+              $request->validate($validacaoCampo, $msgErros);
+          }
         //dd($request->all());
         $rh = RecursosHumanos::find($rh->id);
         $rh->update($request->all());
