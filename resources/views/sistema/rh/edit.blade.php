@@ -16,10 +16,10 @@
 
         <div class="col-11 flex-column flex-md-row p-0 gap-0 py-md-4 align-items-center justify-content-center">
             <div class="card  shadow-lg" data-bs-theme="light">
-                <h5 class="card-header fw-bolder text-capitalize">Nome Completo: {{ $rec_humanos->nome }}</h5>
+                <h5 class="card-header fw-bolder text-capitalize">Nome Completo: {{ $rh->nome }}</h5>
                 <div class="card-body">
 
-                    <form action="{{ route('rh.update', ['rec_humanos' => $rec_humanos->id]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('rh.update', ['rh' => $rh->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -27,7 +27,7 @@
                             <div class="col-sm-2">
                                 <label class="form-label fw-bolder" for='nome'>{{ __('Matrícula') }}</label>
                                 <input type="text" class="form-control" id="matricula" name="matricula"
-                                    value="{{ $rec_humanos->matricula }}">
+                                    value="{{ $rh->matricula }}">
                                 @if ($errors->has('matricula'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('matricula') }}
@@ -38,7 +38,7 @@
                             <div class="col-sm-5">
                                 <label class="form-label fw-bolder" for='nome' >{{ __('Nome Completo') }}</label>
                                 <input type="text" class="form-control" id="nome" name="nome"
-                                    value="{{ $rec_humanos->nome }}">
+                                    value="{{ $rh->nome }}">
                                 @if ($errors->has('nome'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('nome') }}
@@ -49,7 +49,7 @@
                             <div class="col-5">
                                 <label class="form-label fw-bolder" for='email'>{{ __('Email') }}</label>
                                 <input class="form-control" type="email" id="email" name="email"
-                                    value="{{ $rec_humanos->email }}">
+                                    value="{{ $rh->email }}">
                                 @if ($errors->has('email'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('email') }}
@@ -60,7 +60,7 @@
                             <div class="col-sm-4">
                                 <label class="form-label fw-bolder" for='cpf'>{{ __('CPF') }}</label>
                                 <input class="form-control" type="text" id="cpf" name="cpf"
-                                    value="{{ $rec_humanos->cpf }}" OnKeyPress="formatar('###.###.###-##',this)">
+                                    value="{{ $rh->cpf }}" OnKeyPress="formatar('###.###.###-##',this)">
                                 @if ($errors->has('cpf'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('cpf') }}
@@ -71,7 +71,7 @@
                             <div class="col-sm-4">
                                 <label class="form-label fw-bolder" for='rg'>{{ __('RG') }}</label>
                                 <input class="form-control" type="text" id="rg" name="rg"
-                                    value="{{ $rec_humanos->rg }}">
+                                    value="{{ $rh->rg }}">
                                 @if ($errors->has('rg'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('rg') }}
@@ -82,7 +82,7 @@
                             <div class="col-sm-4">
                                 <label class="form-label fw-bolder" for='telefone'>{{ __('Telefone') }}</label>
                                 <input class="form-control" type="text" id="telefone" name="telefone"
-                                    value="{{ $rec_humanos->telefone }}" OnKeyPress="formatar('(##)#.####-#####',this)">
+                                    value="{{ $rh->telefone }}" OnKeyPress="formatar('(##)#.####-#####',this)">
                                 @if ($errors->has('telefone'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('telefone') }}
@@ -93,7 +93,7 @@
                             <div class="col-8">
                                 <label class="form-label fw-bolder" for='endereco'>{{ __('Endereço') }}</label>
                                 <input class="form-control text-capitalize" type="text" id="endereco" name="endereco"
-                                    value="{{ $rec_humanos->endereco }}">
+                                    value="{{ $rh->endereco }}">
                                 @if ($errors->has('endereco'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('endereco') }}
@@ -104,7 +104,7 @@
                             <div class="col-4">
                                 <label class="form-label fw-bolder" for='complemento'>{{ __('Complemento') }}</label>
                                 <input class="form-control text-capitalize" type="text" id="complemento"
-                                    name="complemento" value="{{ $rec_humanos->complemento }}">
+                                    name="complemento" value="{{ $rh->complemento }}">
                                 @if ($errors->has('complemento'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('complemento') }}
@@ -116,7 +116,7 @@
                                 <label for="selectCidade" class="form-label fw-bolder">{{ __('Cidade') }}</label>
                                 <select class="form-select" id="selectCidade" name="cidades_id"
                                     aria-label="Default select example">
-                                    <option selected>{{ $rec_humanos->cidades->municipio }}</option>
+                                    <option value="{{ $rh->cidades->id }}" selected>{{ $rh->cidades->municipio }}</option>
                                     @foreach ($cidades as $cidade)
                                         <option value="{{ $cidade->id }}">{{ $cidade->municipio }}</option>
                                     @endforeach
@@ -126,17 +126,17 @@
                             <div class="col-3">
                                 <label class="form-label fw-bolder" for='data_inicio'>{{ __('Data de assinatura') }}</label>
                                 <input class="form-control" type="date" id="data_inicio" name="data_inicio"
-                                    value="{{ $rec_humanos->data_inicio }}">
+                                    value="{{ $rh->data_inicio }}">
                             </div>
                             <div class="col-3">
                                 <label class="form-label fw-bolder" for='validade'>{{ __('Validade') }}</label>
                                 <input class="form-control text-capitalize" type="text" id="validade"
-                                    name="validade" value="{{ $rec_humanos->validade }}">
+                                    name="validade" value="{{ $rh->validade }}">
                             </div>
                             <div class="col-3">
                                 <label class="form-label fw-bolder" for='date_fim'>{{ __('Data de Termino') }}</label>
                                 <input class="form-control" type="date" id="date_fim" name="data_fim"
-                                    value="{{ $rec_humanos->data_fim }}">
+                                    value="{{ $rh->data_fim }}">
                             </div>
                             <div class="col-6">
                                 <fieldset class="row mb-3">
@@ -145,7 +145,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="contrato"
                                                 id="contrato" value="efetivo"
-                                                {{ $rec_humanos->contrato == 'efetivo' ? 'checked' : '' }}>
+                                                {{ $rh->contrato == 'efetivo' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="radioCaixaAberta">
                                                 Efetivo
                                             </label>
@@ -153,7 +153,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="contrato"
                                                 id="contrato" value="comissionado"
-                                                {{ $rec_humanos->contrato == 'comissionado' ? 'checked' : '' }}>
+                                                {{ $rh->contrato == 'comissionado' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="radioCaixaAberta">
                                                 Comissionado
                                             </label>
@@ -161,7 +161,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="contrato"
                                                 id="contrato" value="prestador"
-                                                {{ $rec_humanos->contrato == 'prestador' ? 'checked' : '' }}>
+                                                {{ $rh->contrato == 'prestador' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="radioCaixaAberta">
                                                 Prestador de Serviços
                                             </label>
@@ -174,12 +174,12 @@
                             <div class="col-3">
                                 <label class="form-label fw-bolder" for='funcao'>{{ __('Função') }}</label>
                                 <input class="form-control text-capitalize" type="text" id="funcao" name="funcao"
-                                    value="{{ $rec_humanos->funcao }}">
+                                    value="{{ $rh->funcao }}">
                             </div>
                             <div class="col-3">
                                 <label class="form-label fw-bolder" for='setor'>{{ __('Setor') }}</label>
                                 <input class="form-control text-uppercase" type="text" id="setor" name="setor"
-                                    value="{{ $rec_humanos->setor }}">
+                                    value="{{ $rh->setor }}">
                             </div>
 
                             <div class="col-auto">

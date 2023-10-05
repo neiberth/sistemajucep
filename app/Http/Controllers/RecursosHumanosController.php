@@ -110,18 +110,18 @@ class RecursosHumanosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RecursosHumanos $rec_humanos)
+    public function edit(RecursosHumanos $rh)
     {
         $cidades = Cidades::all();
         //$rh = RecursosHumanos::find($rh->id);
         //$action = route('rh.update', $rh);
-        return view('sistema.rh.edit', compact('rec_humanos', 'cidades'));
+        return view('sistema.rh.edit', compact('rh', 'cidades'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RecursosHumanos $rec_humanos)
+    public function update(Request $request, RecursosHumanos $rh)
     {
 
         //  if($request->input('_token') != ''){
@@ -152,9 +152,9 @@ class RecursosHumanosController extends Controller
         //      //dd($request->all());
         //      $request->validate($validacaoCampo, $msgErros);
         //  }
-        dd($request->all());
-        $rec_humanos = RecursosHumanos::find($rec_humanos->id);
-        $rec_humanos->update($request->all());
+        //dd($request->all());
+        $rh = RecursosHumanos::find($rh->id);
+        $rh->update($request->all());
 
         return redirect()->route('rh.index');
     }

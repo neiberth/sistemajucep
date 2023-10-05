@@ -82,16 +82,16 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, User $usuario)
     {
-        $validacaoCampo = [
-            'num_caixa' => ['required', 'string', 'max:10'],
-        ];
-        $msgError = [
-            'required' => ['Esse Campo é Obrigatorio'],
-            'unique' => ['Caixa já foi cadastrada'],
-            'integer' => ['Campo só aceita Números'],
-        ];
+        // $validacaoCampo = [
+        //     'num_caixa' => ['required', 'string', 'max:10'],
+        // ];
+        // $msgError = [
+        //     'required' => ['Esse Campo é Obrigatorio'],
+        //     'unique' => ['Caixa já foi cadastrada'],
+        //     'integer' => ['Campo só aceita Números'],
+        // ];
 
-        $request->validate($validacaoCampo, $msgError);
+        // $request->validate($validacaoCampo, $msgError);
 
         $usuario = User::find($usuario->id);
         $usuario->update($request->all());
