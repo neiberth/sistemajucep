@@ -142,11 +142,7 @@
                     @empty
                         <tr>
                             <td colspan="5">
-<<<<<<< Updated upstream
                                 <p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizado</p>
-=======
-                                <p class="fs-5 fw-medium text-danger mb-0">Nenhum funcionário foi Localizado</p>
->>>>>>> Stashed changes
                             </td>
                         </tr>
                     @endforelse
