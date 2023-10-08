@@ -106,40 +106,9 @@
         </div>
 
         <div class="row">
-<<<<<<< Updated upstream
 
 
 
-=======
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Novo Funcionário</h5>
-                        <p class="card-text">Cadastro de um novo funcionário do sistema.</p>
-                        <a href="{{ route('rh.create') }}" class="btn btn-primary">Cadastrar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="card">
-                    <form action="{{ route('rh.index') }}" method="get">
-                        <div class="card-body">
-                            <h5 class="card-title">Busca por Nome no sistema</h5>
-                            <div class="row">
-                                <p class="card-text col-md-2 col-form-label text-md-start">Nome:</p>
-                                <div class="col-md-5">
-                                    <input id="nome" type="text" class="form-control text-capitalize"
-                                        name="nome">
-                                </div>
-                            </div>
-                            <button class="btn btn-primary mt-1"><i
-                                    class="fa-solid fa-magnifying-glass me-1"></i>Localizar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
->>>>>>> Stashed changes
         </div>
 
         <div
