@@ -11,48 +11,58 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
 
+<<<<<<< Updated upstream
 
         <div class="row row-cols-1 row-cols-md-4 mb-0 text-center">
+=======
+        <div class="row row-cols-1 row-cols-md-6 mb-0 text-center">
+>>>>>>> Stashed changes
             <div class="col">
                 <div class="card mb-2 rounded-3 shadow-sm text-bg-primary">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Total de Funcionários</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-primary fw-light">{{$contColaboradores}}</small></h1>
-                  </div>
+                    <div class="card-header py-2">
+                        <h5 class="my-0 fw-normal">Total de Funcionários</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small
+                                class="text-body-primary fw-light">{{ $contColaboradores }}</small></h3>
+                    </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Efetivo</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-secondary fw-light">{{ $contEfetivo}}</small></h1>
-                  </div>
+                <div class="card mb-2 rounded-3 shadow-sm">
+                    <div class="card-header py-2">
+                        <h5 class="my-0 fw-normal">Efetivo</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small
+                                class="text-body-secondary fw-light">{{ $contEfetivo }}</small></h3>
+                    </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm ">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Comissionado</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-secondary fw-light">{{$contComissionado}}</small></h1>
-                  </div>
+                <div class="card mb-2 rounded-3 shadow-sm ">
+                    <div class="card-header py-2">
+                        <h5 class="my-0 fw-normal">Comissionado</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i>
+                            <small class="text-body-secondary fw-light">{{ $contComissionado }}</small>
+                        </h3>
+                    </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Prestador de Serviço</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small class="text-body-secondary fw-light">{{ $contPrestador }}</small></h1>
-                  </div>
+                <div class="card mb-2 rounded-3 shadow-sm">
+                    <div class="card-header py-2">
+                        <h5 class="my-0 fw-normal">Prestador de Serviços</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title pricing-card-title"><i class="fa-solid fa-users me-2"></i><small
+                                class="text-body-secondary fw-light">{{ $contPrestador }}</small></h3>
+                    </div>
                 </div>
             </div>
+<<<<<<< Updated upstream
         </div>
 
 
@@ -95,22 +105,54 @@
                     </form>
                 </div>
             </div>
+=======
+>>>>>>> Stashed changes
         </div>
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-1 mb-1 border-bottom">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-1 mb-3 border-bottom">
         </div>
 
         <div class="row">
+<<<<<<< Updated upstream
 
 
 
+=======
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Novo Funcionário</h5>
+                        <p class="card-text">Cadastro de um novo funcionário do sistema.</p>
+                        <a href="{{ route('rh.create') }}" class="btn btn-primary">Cadastrar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <form action="{{ route('rh.index') }}" method="get">
+                        <div class="card-body">
+                            <h5 class="card-title">Busca por Nome no sistema</h5>
+                            <div class="row">
+                                <p class="card-text col-md-2 col-form-label text-md-start">Nome:</p>
+                                <div class="col-md-5">
+                                    <input id="nome" type="text" class="form-control text-capitalize"
+                                        name="nome">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-1"><i
+                                    class="fa-solid fa-magnifying-glass me-1"></i>Localizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+>>>>>>> Stashed changes
         </div>
 
         <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
-        <h2>Lista de Colaboradores no Sistema</h2>
-
+        <h2>Lista de Funcionário no Sistema</h2>
 
         <div class="table-responsive small mb-0">
             <table class="table table-striped table-sm">
@@ -138,17 +180,23 @@
                     @empty
                         <tr>
                             <td colspan="5">
+<<<<<<< Updated upstream
                                 <p class="fs-5 fw-medium text-danger mb-0">Nenhum Usuario foi Localizado</p>
+=======
+                                <p class="fs-5 fw-medium text-danger mb-0">Nenhum funcionário foi Localizado</p>
+>>>>>>> Stashed changes
                             </td>
                         </tr>
                     @endforelse
                 </tbody>
             </table>
         </div>
+
         <div class="row justify-content-center">
             <div class="col-auto">
-              {{ $listaRHs->links() }}
+                {{ $listaRHs->links() }}
             </div>
-          </div>
+        </div>
+
     </main>
 @endsection
