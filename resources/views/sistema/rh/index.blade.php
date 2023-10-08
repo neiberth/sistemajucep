@@ -11,12 +11,8 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
 
-<<<<<<< Updated upstream
 
         <div class="row row-cols-1 row-cols-md-4 mb-0 text-center">
-=======
-        <div class="row row-cols-1 row-cols-md-6 mb-0 text-center">
->>>>>>> Stashed changes
             <div class="col">
                 <div class="card mb-2 rounded-3 shadow-sm text-bg-primary">
                     <div class="card-header py-2">
@@ -62,7 +58,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< Updated upstream
         </div>
 
 
@@ -105,8 +100,6 @@
                     </form>
                 </div>
             </div>
-=======
->>>>>>> Stashed changes
         </div>
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-1 mb-3 border-bottom">
