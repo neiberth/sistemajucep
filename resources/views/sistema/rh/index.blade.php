@@ -73,17 +73,21 @@
                         <div class="card-body ">
                             <h5 class="card-title ">Busca no sistema</h5>
                             <div class="row">
-                                <p class="card-text col-md-auto col-form-label text-md-start">Nome:</p>
-                                <div class="col-sm-3">
-                                    <input id="nome" type="text" class="form-control text-capitalize" name="nome">
+                                <div class="col-4">
+                                    <p class="card-text col-md-auto col-form-label text-md-start">Nome:</p>
+                                    <div class="col-sm-auto">
+                                        <input id="nome" type="text" class="form-control text-capitalize" name="nome">
+                                    </div>
                                 </div>
 
-                                <p class="card-text col-md-auto col-form-label text-md-start">Contrato:</p>
-                                <div class="col-sm-3">
-                                    <input id="contrato" type="text" class="form-control text-capitalize" name="contrato">
+                                <div class="col-4">
+                                    <p class="card-text col-md-auto col-form-label text-md-start">Contrato:</p>
+                                    <div class="col-sm-auto">
+                                        <input id="contrato" type="text" class="form-control text-capitalize" name="contrato">
+                                    </div>
                                 </div>
 
-                                <div class="col-sm-auto">
+                                <div class="col-sm-auto mt-3">
                                     <button class="btn btn-primary ">
                                         <i class="fa-solid fa-magnifying-glass me-1"></i>Localizar
                                     </button>
@@ -100,16 +104,15 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-1 mb-1 border-bottom">
         </div>
 
-        <div class="row">
-
-
-
-        </div>
-
         <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
-        <h2>Lista de Colaboradores no Sistema</h2>
+        <div class="row">
+            <div class="col-auto">
+                <h2>Lista de Colaboradores no Sistema</h2>
+            </div>
+
+        </div>
 
 
         <div class="table-responsive small mb-0">
@@ -120,6 +123,7 @@
                         <th scope="col">Nome Completo</th>
                         <th scope="col">Email</th>
                         <th scope="col">Telefone</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Abrir Fixa</th>
                         <th scope="col">Atualizar</th>
                     </tr>
@@ -131,6 +135,7 @@
                             <td class="text-capitalize">{{ $listaRH->nome }}</td>
                             <td>{{ $listaRH->email }}</td>
                             <td>{{ $listaRH->telefone }}</td>
+                            <td>{{ $listaRH->status }}</td>
                             <td><a href="{{ route('rh.show', $listaRH->id) }}"> <i
                                         class="bi bi-folder2-open fs-5 text-success"></i></a></td>
                             <td><a href="{{ route('rh.edit', $listaRH->id) }}"> <i class="bi bi-person-fill-gear fs-5 text-danger"></i></a></td>

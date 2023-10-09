@@ -26,6 +26,7 @@ class RecursosHumanos extends Model
         'contrato',
         'path',
         'cidades_id',
+        'status',
     ];
 
     public function cidades()

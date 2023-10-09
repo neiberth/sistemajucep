@@ -14,14 +14,51 @@
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-0 pb-2 mb-3 border-bottom">
         </div>
 
-        <div class="col-11 flex-column flex-md-row p-0 gap-0 py-md-4 align-items-center justify-content-center">
-            <div class="card  shadow-lg" data-bs-theme="light">
-                <h5 class="card-header fw-bolder text-capitalize">Nome Completo: {{ $rh->nome }}</h5>
-                <div class="card-body">
+        <form action="{{ route('rh.update', ['rh' => $rh->id]) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="col-11 flex-column flex-md-row p-0 gap-0 py-md-4 align-items-center justify-content-center">
+                <div class="card  shadow-lg" data-bs-theme="light">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-4">
+                                <h5 class="fw-bolder text-capitalize">Nome Completo: {{ $rh->nome }}</h5>
+                            </div>
+                            <div class="col-auto">
+                                <fieldset class="row ">
+                                    <legend class="col-form-label col-auto ms-md-auto pt-0 fw-bolder" for='status'>Status
+                                    </legend>
+                                    <div class="col ms-md-auto">
+                                        <div class="row">
+                                            <div class="col-auto ms-md-auto">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="status"
+                                                        id="status" value="ativo"
+                                                        {{ $rh->status == 'ativo' ? 'checked' : '' }}>
+                                                    <label class="form-check-label" for="status">
+                                                        Ativo
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="status"
+                                                        id="status" value="inativo"
+                                                        {{ $rh->status == 'inativo' ? 'checked' : '' }}>
+                                                    <label class="form-check-label" for="status">
+                                                        Inativo
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
 
-                    <form action="{{ route('rh.update', ['rh' => $rh->id]) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
+                    <div class="card-body">
+
 
                         <div class="row g-3">
                             <div class="col-sm-2">
@@ -36,7 +73,7 @@
                             </div>
 
                             <div class="col-sm-5">
-                                <label class="form-label fw-bolder" for='nome' >{{ __('Nome Completo') }}</label>
+                                <label class="form-label fw-bolder" for='nome'>{{ __('Nome Completo') }}</label>
                                 <input type="text" class="form-control" id="nome" name="nome"
                                     value="{{ $rh->nome }}">
                                 @if ($errors->has('nome'))
@@ -92,8 +129,8 @@
 
                             <div class="col-8">
                                 <label class="form-label fw-bolder" for='endereco'>{{ __('Endereço') }}</label>
-                                <input class="form-control text-capitalize" type="text" id="endereco" name="endereco"
-                                    value="{{ $rh->endereco }}">
+                                <input class="form-control text-capitalize" type="text" id="endereco"
+                                    name="endereco" value="{{ $rh->endereco }}">
                                 @if ($errors->has('endereco'))
                                     <div class="text-bg-danger ps-2 bg-opacity-75">
                                         {{ $errors->first('endereco') }}
@@ -116,7 +153,8 @@
                                 <label for="selectCidade" class="form-label fw-bolder">{{ __('Cidade') }}</label>
                                 <select class="form-select" id="selectCidade" name="cidades_id"
                                     aria-label="Default select example">
-                                    <option value="{{ $rh->cidades->id }}" selected>{{ $rh->cidades->municipio }}</option>
+                                    <option value="{{ $rh->cidades->id }}" selected>{{ $rh->cidades->municipio }}
+                                    </option>
                                     @foreach ($cidades as $cidade)
                                         <option value="{{ $cidade->id }}">{{ $cidade->municipio }}</option>
                                     @endforeach
@@ -124,7 +162,8 @@
                             </div>
 
                             <div class="col-3">
-                                <label class="form-label fw-bolder" for='data_inicio'>{{ __('Data de assinatura') }}</label>
+                                <label class="form-label fw-bolder"
+                                    for='data_inicio'>{{ __('Data de assinatura') }}</label>
                                 <input class="form-control" type="date" id="data_inicio" name="data_inicio"
                                     value="{{ $rh->data_inicio }}">
                             </div>
@@ -140,13 +179,14 @@
                             </div>
                             <div class="col-6">
                                 <fieldset class="row mb-3">
-                                    <legend class="col-form-label col-sm-4 pt-0 fw-bolder" for='contrato'>Tipo de Contrato</legend>
+                                    <legend class="col-form-label col-sm-4 pt-0 fw-bolder" for='contrato'>Tipo de Contrato
+                                    </legend>
                                     <div class="col">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="contrato"
                                                 id="contrato" value="efetivo"
                                                 {{ $rh->contrato == 'efetivo' ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="radioCaixaAberta">
+                                            <label class="form-check-label" for="contrato">
                                                 Efetivo
                                             </label>
                                         </div>
@@ -154,7 +194,7 @@
                                             <input class="form-check-input" type="radio" name="contrato"
                                                 id="contrato" value="comissionado"
                                                 {{ $rh->contrato == 'comissionado' ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="radioCaixaAberta">
+                                            <label class="form-check-label" for="contrato">
                                                 Comissionado
                                             </label>
                                         </div>
@@ -162,7 +202,7 @@
                                             <input class="form-check-input" type="radio" name="contrato"
                                                 id="contrato" value="prestador"
                                                 {{ $rh->contrato == 'prestador' ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="radioCaixaAberta">
+                                            <label class="form-check-label" for="contrato">
                                                 Prestador de Serviços
                                             </label>
                                         </div>
@@ -186,18 +226,21 @@
                                 <a href="{{ route('rh.index') }}" class="btn btn-primary "><i
                                         class="fa-solid fa-rotate-left me-1"></i>Voltar</a>
                             </div>
+
                             <div class="col-auto">
                                 <button class="btn btn-success"><i
-                                        class="fa-solid fa-user-pen me-1"></i></i>Atualizar</button>
+                                        class="fa-solid fa-user-pen me-1"></i>Atualizar</button>
                             </div>
+
                         </div>
-                    </form>
+        </form>
 
-
-
-                </div>
+        <div class="row justify-content-end">
+            <div class="col-auto ">
+                <a class="btn btn-danger" href="{{ route('rh.aviso', $rh->id) }}">
+                    <i class="fa-solid fa-user-slash me-1"></i>Excluir
+                </a>
             </div>
-
         </div>
 
     </main>

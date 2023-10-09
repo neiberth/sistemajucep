@@ -12,6 +12,7 @@ use App\Http\Controllers\RecursosHumanosController;
 use App\Http\Controllers\AdministrativoController;
 use App\Http\Controllers\ConfiguracaoController;
 use App\Http\Controllers\CidadesController;
+use App\Models\RecursosHumanos;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,7 @@ Route::prefix('sistema')->middleware(['arquivo'])->group(function(){
 
 Route::prefix('sistema')->middleware(['rh'])->group(function(){
     Route::resource('rh', RecursosHumanosController::class);
+    Route::get('rh/aviso/{id}', [RecursosHumanosController::class, 'aviso'])->name('rh.aviso');
 });
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

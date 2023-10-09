@@ -16,7 +16,28 @@
 
         <div class="col-11 flex-column flex-md-row p-0 gap-0 py-md-4 align-items-center justify-content-center">
             <div class="card  shadow-lg" data-bs-theme="light">
-                <h5 class="card-header fw-bolder text-capitalize">Nome Completo: {{ $rh->nome }}</h5>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="fw-bolder text-capitalize">Nome Completo: {{ $rh->nome }}</h5>
+                        </div>
+                        <div class="col-6 text-end">
+                            <div class="row">
+                                <div class="col-auto  ms-md-auto">
+                                    <h5 class="fw-bolder text-capitalize">Status: </h5>
+                                </div>
+                                <div class="col-auto me-5">
+                                    @if ($rh->status == 'inativo')
+                                        <h5 class="fw-bolder text-capitalize text-danger">{{ $rh->status }}</h5>
+                                    @else
+                                        <h5 class="fw-bolder text-capitalize text-success">{{ $rh->status }}</h5>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card-body">
 
                     <div class="row g-3">
@@ -91,10 +112,12 @@
                         </div>
 
                         <div class="col-auto">
-                           <a href="{{ route('rh.index') }}" class="btn btn-primary "><i class="fa-solid fa-rotate-left me-1"></i>Voltar</a>
+                            <a href="{{ route('rh.index') }}" class="btn btn-primary "><i
+                                    class="fa-solid fa-rotate-left me-1"></i>Voltar</a>
                         </div>
                         <div class="col-auto">
-                            <a href="#" class="btn btn-success"><i class="fa-solid fa-user-pen me-1"></i></i>Atualizar</a>
+                            <a href="#" class="btn btn-success"><i
+                                    class="fa-solid fa-user-pen me-1"></i></i>Atualizar</a>
                         </div>
                     </div>
 

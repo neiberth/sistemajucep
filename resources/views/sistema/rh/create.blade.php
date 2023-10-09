@@ -163,7 +163,7 @@
                             @endif
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-4">
                             <label for="funcao" class="form-label">{{ __('Função') }}</label>
                             <input type="text" class="form-control" id="funcao" placeholder="" name="funcao"
                                 value="{{ old('funcao') }}" required autocomplete="funcao">
@@ -174,7 +174,7 @@
                             @endif
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-4">
                             <label for="setor" class="form-label">{{ __('Setor') }}</label>
                             <input type="text" class="form-control text-uppercase" id="setor" placeholder=""
                                 name="setor" value="{{ old('setor') }}" required autocomplete="setor">
@@ -183,6 +183,32 @@
                                     {{ $errors->first('setor') }}
                                 </div>
                             @endif
+                        </div>
+
+                         <div class="col-4 ">
+                            <label for="setor" class="form-label">{{ __('Status') }}</label>
+                            <div class="row text-end">
+                                <div class="col-auto mt-2 ">
+                                    <div class="form-check">
+                                        <input id="status" name="status" type="radio" class="form-check-input"
+                                            value="ativo" required>
+                                        <label class="form-check-label text-md-start fw-semibold"
+                                            for="status">{{ __('Ativo') }}</label>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-auto mt-2">
+                                    <div class="form-check">
+                                        <input id="status" name="status" type="radio" class="form-check-input"
+                                            value="inativo" required>
+                                        <label class="form-check-label text-md-start fw-semibold"
+                                            for="status">{{ __('Inativo') }}</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
 
